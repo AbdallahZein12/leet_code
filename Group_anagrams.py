@@ -1,4 +1,38 @@
+
+class Solution(object):
+    def groupAnagrams(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: List[List[str]]
+        """
+        
+
+
+
+        ans = []
+        placeholder = {}
+        for i in strs:
+            sorted_anag = "".join(sorted(i))
+            if sorted_anag in placeholder.keys():
+                placeholder[sorted_anag].append(i)
+            else:
+                placeholder[sorted_anag] = []
+                placeholder[sorted_anag].append(i)
+        
+        ans = [i for i in placeholder.values()]
+
+        return ans 
+
+
+
+
+
+##OTHER METHODS THAT DID WORK BUT WITH WORSE ALGO##
+
 strs = ["","",""]
+
+
+
 
 
 my_dict = {}
