@@ -5,11 +5,7 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        string_1 = list(s)
-        string_2 = list(t)
-        string_1.sort()
-        string_2.sort()
-        if string_1 == string_2:
+        if sorted(s) == sorted(t):
             return True
         else:
             return False
