@@ -1,6 +1,14 @@
-hash = set(nums)
+class Solution(object):
+    def containsNearbyDuplicate(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: bool
+        """
+        hashset = {}
+        for index, value in enumerate(nums):
+            if value in hashset and abs(index - hashset[nums[index]])  <=k:
+                return True
 
-for i in hash:
-    if nums.count(i) > 1:
-        indexi = nums.index(i)
-        indexj = nums.index(i, indexi+1)
+            hashset[nums[index]] = index
+        return False
