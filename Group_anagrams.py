@@ -66,3 +66,18 @@ for i in strs:
     
 print(ans)
             
+            
+###
+
+strs = ["eat","tea","tan","ate","nat","bat"]
+
+hashset = {}
+
+for value in strs:
+    if tuple(sorted(value)) in hashset:
+        hashset[tuple(sorted(value))].append(value)
+            
+    else: 
+        hashset[tuple(sorted(value))] = [value]
+
+print(hashset)
