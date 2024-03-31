@@ -79,4 +79,4 @@ for value in strs:
     else: 
         hashset[tuple(sorted(value))] = [value]
 
-print(hashset)
+print(list(hashset.values()))
