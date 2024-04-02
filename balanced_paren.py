@@ -1,3 +1,31 @@
+## Newest Solution
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = list()
+        
+        valid_paren = {'(':')', '[':']','{':'}'}
+
+        for i in s:
+            if i in valid_paren:
+                stack.append(i)
+            else:
+                if not stack:
+                    return False
+                if valid_paren[stack[-1]] != i:
+                    return False
+                else:
+                    stack.pop()
+        
+        if stack:
+            return False
+
+        return True
+                
+
+### Older solution
+
+
 class Solution(object):
     def isValid(self, s):
         """
@@ -32,4 +60,3 @@ class Solution(object):
             return True
                 
             
-                
