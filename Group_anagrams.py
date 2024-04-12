@@ -80,3 +80,17 @@ for value in strs:
         hashset[tuple(sorted(value))] = [value]
 
 print(list(hashset.values()))
+
+### Fastest solution
+import collections
+class Solution(object):
+    def groupAnagrams(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: List[List[str]]
+        """
+        hashset = collections.defaultdict(list)
+        for value in strs:
+            hashset[tuple(sorted(value))].append(value)
+
+        return list(hashset.values())

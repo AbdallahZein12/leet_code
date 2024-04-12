@@ -34,3 +34,13 @@ class Solution:
                 return [d[r], i]
             d[j] = i
             
+### Fastest
+
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> List[int]:
+        nums_dict = dict()
+        for i, value in enumerate(nums):
+            if target - value in nums_dict:
+                return [nums_dict[target - value],i]
+            nums_dict[value] = i
+            

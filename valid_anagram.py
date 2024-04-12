@@ -7,6 +7,12 @@ class Solution(object):
         """
         if sorted(s) == sorted(t):
             return True
-        else:
-            return False
+        
+        return False
+    
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
+            
+        
         
