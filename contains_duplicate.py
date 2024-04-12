@@ -1,3 +1,13 @@
+from collections import Counter
+
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        if len(set(nums)) != len(nums):
+            return True
+        return False
+    
+
 arr = [0,1,2,3]
 hashset = set()
 
@@ -5,9 +15,25 @@ def answer(arr):
     for i in arr:
         if i in hashset:
             return True
-        else:
-            hashset.add(i)
+        hashset.add(i)
         
     return False
     
 print(answer(arr=arr))
+
+
+####
+
+class Solution:
+    def containsDuplicate(self, nums: list[int]) -> bool:
+        counter = Counter(nums)
+
+        if counter.most_common(1)[0][1] > 1:
+            return True
+        return False
+    
+solution = Solution()
+print(solution.containsDuplicate(nums=[1,2,3,4,4]))
+    
+####
+
