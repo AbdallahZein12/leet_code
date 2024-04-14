@@ -26,11 +26,7 @@ print(answer(arr=arr))
 
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
-        counter = Counter(nums)
-
-        if counter.most_common(1)[0][1] > 1:
-            return True
-        return False
+        return Counter(nums).most_common(1)[0][1] > 1
     
 solution = Solution()
 print(solution.containsDuplicate(nums=[1,2,3,4,4]))
